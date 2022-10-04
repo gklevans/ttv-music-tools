@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitch Music Tools</title>
+    <style>
+    body {background-color: lightgray;}
+    .form {border: 5px outset darkslategray;}
+    </style>
+</head>
+
+<h1>Welcome!</h1>
+<p>These tools provide information obtained from
+<a href="https://www.streamersonglist.com/">StreamerSonglist</a>.</p>
+
+<div class="form">
+    <h3>Request History Lookup</h3>
+    <p>This tool lets you look up the history of requests made through
+    StreamerSonglist in any streamer's channel under a given username.<br>
+    Useful if you'd like to see what song requests you've made 
+    before in a stream.<br>
+    You may also include the titles of scores from any MuseScore links 
+    placed in a queue as a live-learn.<br>
+    Note that any different names used (e.g. previous usernames or manually 
+    entered names) must be searched separately.</p>
+
+    <form action="/" method="POST">
+        <p><input type="text" name="streamer_name" 
+            placeholder="Streamer name" required>
+            <input type="text" name="requester_name" 
+            placeholder="Requester name" required></p>
+            <input type="checkbox" name="musescore" value="on">
+            <label for="musescore">Include titles for MuseScore links</label>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+<p></p>
+<div class="form">
+    <h3>Songlist Settings Lookup</h3>
+    <p>This tool lets you look up the songlist settings of any streamer who 
+    uses StreamerSonglist.<br>
+    Useful if you'd like to check whether and how often you may request songs
+    in a stream.<br>
+    Note that these settings may not exactly reflect the request procedures in 
+    place for each stream.<br>
+    Live-learn settings are not included in these results.</p>
+
+    <form action="/settings/" method="POST">
+        <p><input type="text" name="streamer_name" 
+            placeholder="Streamer name" required>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</html>
